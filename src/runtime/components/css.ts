@@ -167,6 +167,7 @@ export const NuxtIconCss = /* @__PURE__ */ defineComponent({
                   () => {
                     const sep = import.meta.dev ? '\n' : ''
                     let css = Array.from(ssrCSS.values()).sort().join(sep)
+                    css = css.replace(/https:\/\/www\.w3\.org\/2000\/svg/g, "http://www.w3.org/2000/svg");
                     if (options.cssLayer) {
                       css = `@layer ${options.cssLayer} {${sep}${css}${sep}}`
                     }
